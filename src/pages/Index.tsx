@@ -73,42 +73,42 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold text-black">
                 Владимир Голуб
               </h1>
               <p className="text-sm text-gray-600">Скутеры • Мотоциклы • Мопеды</p>
             </div>
             <div className="flex items-center gap-4">
-              <Phone className="w-5 h-5 text-blue-600" />
-              <span className="font-semibold text-gray-800">+7 (XXX) XXX-XX-XX</span>
+              <Phone className="w-5 h-5 text-black" />
+              <span className="font-semibold text-black">+7 (XXX) XXX-XX-XX</span>
             </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
             Ваш надежный партнер
-            <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+            <span className="block text-black">
               в мире двухколесного транспорта
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Более 10 лет опыта продажи и обслуживания скутеров, мотоциклов и мопедов. 
             Только качественная техника от проверенных производителей.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+              className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-none transition-all duration-300"
               onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Посмотреть товары
@@ -116,7 +116,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-xl transition-all duration-300"
+              className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 rounded-none transition-all duration-300"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Связаться со мной
@@ -126,14 +126,14 @@ const Index = () => {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-16 px-4 bg-white/50">
+      <section id="products" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-center text-black mb-12">
             Популярные модели
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg overflow-hidden">
+              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 overflow-hidden rounded-none">
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src={product.image} 
@@ -142,15 +142,15 @@ const Index = () => {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
+                  <h3 className="text-xl font-semibold text-black mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                    <span className="text-2xl font-bold text-black">
                       {product.price}
                     </span>
                     <Button 
                       variant="outline"
-                      className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                      className="border-black text-black hover:bg-black hover:text-white transition-all duration-300 rounded-none"
                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Узнать больше
@@ -164,31 +164,31 @@ const Index = () => {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-16 px-4">
+      <section id="reviews" className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-center text-black mb-12">
             Отзывы клиентов
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review) => (
-              <Card key={review.id} className="hover:shadow-lg transition-all duration-300 border-0 shadow-md">
+              <Card key={review.id} className="hover:shadow-lg transition-all duration-300 border border-gray-200 rounded-none">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="flex">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        <Star key={i} className="w-5 h-5 fill-black text-black" />
                       ))}
                     </div>
                     <span className="text-sm text-gray-500">{review.date}</span>
                   </div>
                   <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
                       <span className="text-white text-sm font-semibold">
                         {review.name.charAt(0)}
                       </span>
                     </div>
-                    <span className="font-semibold text-gray-800">{review.name}</span>
+                    <span className="font-semibold text-black">{review.name}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -198,50 +198,50 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 bg-white/50">
+      <section id="contact" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-4xl font-bold text-center text-black mb-12">
             Связаться со мной
           </h2>
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Контактная информация</h3>
+              <h3 className="text-2xl font-semibold text-black mb-6">Контактная информация</h3>
               
               <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl flex items-center justify-center">
+                <div className="flex items-center gap-4 p-4 bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-12 h-12 bg-black flex items-center justify-center">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Телефон</p>
+                    <p className="font-semibold text-black">Телефон</p>
                     <p className="text-gray-600">+7 (XXX) XXX-XX-XX</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl flex items-center justify-center">
+                <div className="flex items-center gap-4 p-4 bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-12 h-12 bg-black flex items-center justify-center">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Email</p>
+                    <p className="font-semibold text-black">Email</p>
                     <p className="text-gray-600">vladimir@scooters.ru</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl flex items-center justify-center">
+                <div className="flex items-center gap-4 p-4 bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-12 h-12 bg-black flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800">Адрес</p>
+                    <p className="font-semibold text-black">Адрес</p>
                     <p className="text-gray-600">г. Москва, ул. Примерная, 123</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <h4 className="font-semibold text-gray-800 mb-3">Режим работы:</h4>
+              <div className="bg-white p-6 border border-gray-200">
+                <h4 className="font-semibold text-black mb-3">Режим работы:</h4>
                 <div className="space-y-2 text-gray-600">
                   <p>Пн-Пт: 9:00 - 19:00</p>
                   <p>Сб: 10:00 - 17:00</p>
@@ -251,24 +251,24 @@ const Index = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Отправить сообщение</h3>
+            <div className="bg-white p-8 border border-gray-200">
+              <h3 className="text-2xl font-semibold text-black mb-6">Отправить сообщение</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     Ваше имя *
                   </label>
                   <Input
                     required
                     value={contactForm.name}
                     onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
-                    className="w-full border-gray-300 focus:border-blue-600 focus:ring-blue-600"
+                    className="w-full border-gray-300 focus:border-black focus:ring-black rounded-none"
                     placeholder="Введите ваше имя"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     Телефон *
                   </label>
                   <Input
@@ -276,27 +276,27 @@ const Index = () => {
                     type="tel"
                     value={contactForm.phone}
                     onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
-                    className="w-full border-gray-300 focus:border-blue-600 focus:ring-blue-600"
+                    className="w-full border-gray-300 focus:border-black focus:ring-black rounded-none"
                     placeholder="+7 (XXX) XXX-XX-XX"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     Сообщение *
                   </label>
                   <Textarea
                     required
                     value={contactForm.message}
                     onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
-                    className="w-full border-gray-300 focus:border-blue-600 focus:ring-blue-600 min-h-[120px]"
+                    className="w-full border-gray-300 focus:border-black focus:ring-black min-h-[120px] rounded-none"
                     placeholder="Расскажите, что вас интересует..."
                   />
                 </div>
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white py-3 rounded-xl transition-all duration-300 hover:scale-105"
+                  className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-none transition-all duration-300"
                 >
                   <MessageSquare className="w-5 h-5 mr-2" />
                   Отправить сообщение
@@ -308,7 +308,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4">
+      <footer className="bg-black text-white py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-4">
             <h3 className="text-xl font-semibold mb-2">Владимир Голуб</h3>
